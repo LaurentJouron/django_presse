@@ -1,0 +1,33 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="" content="" />
+    <meta name="author" content="Laurent Jouron" />
+    <link rel="icon" href="{% static 'images/ikigai.png' %}" />
+    <title>Laurent Jouron | {% block title %}{% endblock title %}</title>
+    {% comment %} <title>Laurent Jouron</title> {% endcomment %}
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block stylesheet %}{% endblock stylesheet %}
+</head>
+<body>
+    {% block navigation %}{% endblock navigation %}
+    {% block reception %}{% endblock reception %}
+    {% block presentation %}{% endblock presentation %}
+
+    {% block content %}{% endblock content %}
+    {% block body %}{% endblock body %}
+    {% block messages %}{% endblock messages %}
+    {% block header %}{% endblock header %}
+    {% block outer_content %}{% endblock outer_content %}
+    {% block modal %}{% endblock modal %}
+
+    {% block footer %}{% endblock footer %}
+    {% block bottom_scripts %}<script src="{% static 'js/script.js' %}"></script>{% endblock bottom_scripts %}
+</body>
+</html>
