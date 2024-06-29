@@ -9,6 +9,31 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ("title", "content", "publication_date")
+        widgets = {
+            "title": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Entrez le titre ici",
+                    "maxlength": "100",
+                    "required": True,
+                }
+            ),
+            "content": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Entrez le contenu ici",
+                    "rows": 5,
+                    "required": True,
+                }
+            ),
+            "publication_date": forms.DateInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "YYYY-MM-DD",
+                    "type": "date",
+                }
+            ),
+        }
 
     def clean_title(self):
         title = self.cleaned_data.get("title")

@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class ArticleQuerySet(models.QuerySet):
@@ -51,6 +52,13 @@ class Article(models.Model):
         related_name="articles",
     )
     tags = models.ManyToManyField("Tag", related_name="articles")
+    writer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name="articles",
+    )
 
     def __str__(self):
         return self.title

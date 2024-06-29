@@ -1,17 +1,22 @@
 <!-- home/index.html -->
 {% extends "base.html" %}
+{% load tailwind_filters %}
 
 {% block title %}
-    {{ title }}
+    home
 {% endblock title %}
 
 {% block content %}
-    <h1>{{ welcome }}</h1>
+<div class="container mx-auto">
+    <h1 class="font-bold text-4xl mt-4">Bienvenu sur le site</h1>
+</div>
 
+<main class="container mx-auto">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Envoyer get</button>
+        {{ form|crispy }}
+        <button  class="btn btn-neutral" type="submit">Envoyer</button>
     </form>
+</main>
 
 {% endblock content %}

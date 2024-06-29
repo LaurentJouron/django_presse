@@ -8,6 +8,8 @@ django-environ = "*"
 django = "*"
 environ = "*"
 django-extensions = "*"
+crispy-tailwind = "*"
+django-browser-reload = "*"
 
 [dev-packages]
 
